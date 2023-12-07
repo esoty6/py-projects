@@ -16,7 +16,7 @@ while turns > 0:
   answer = ''
 
   while guess in guesses:
-    guess = input('You already guessed that character. Try another one: ')[0]
+    guess = input(f"You already guessed '{guess}'. Try another one: ")[0]
     
   guesses += guess
   
