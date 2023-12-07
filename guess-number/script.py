@@ -1,5 +1,6 @@
 import random
 
+
 randomNumber = random.randint(0, 100)
 
 def get_user_guess():
