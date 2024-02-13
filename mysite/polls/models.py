@@ -19,7 +19,7 @@ class Pizza(models.Model):
   toppings = models.ManyToManyField(Topping, related_name="pizza")
   
   def __str__(self):
-    return self.name;
+    return f'{self.name} - {", ".join(topping.name for topping in self.toppings.all())}';
 
 class Restaurant(models.Model):
     class Meta:
