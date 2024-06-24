@@ -1,51 +1,48 @@
-
-
-
-def merge(arr, l, m, r):
-  n1 = m - l + 1
-  n2 = r - m
+def merge(array, left, middle, right):
+  sizeLeft = middle - left + 1
+  sizeRight = right - middle
   
-  L = [0] * n1
-  R = [0] * n2
+  LEFT_ARRAY = [0] * sizeLeft
+  RIGHT_ARRAY = [0] * sizeRight
   
-  for i in range(0, n1):
-    L[i] = arr[l + i]
+  for i in range(0, sizeLeft):
+    LEFT_ARRAY[i] = array[left + i]
 
-  for j in range(0, n2):
-    R[j] = arr[m + 1 + j]
+  for j in range(0, sizeRight):
+    RIGHT_ARRAY[j] = array[middle + 1 + j]
       
   i = 0
   j = 0
-  k = l
+  k = left
  
-  while i < n1 and j < n2:
-    if L[i] <= R[j]:
-      arr[k] = L[i]
+  while i < sizeLeft and j < sizeRight:
+    if LEFT_ARRAY[i] <= RIGHT_ARRAY[j]:
+      array[k] = LEFT_ARRAY[i]
       i += 1
     else:
-      arr[k] = R[j]
+      array[k] = RIGHT_ARRAY[j]
       j += 1
     k += 1
 
-  while i < n1:
-    arr[k] = L[i]
+  while i < sizeLeft:
+    array[k] = LEFT_ARRAY[i]
     i += 1
     k += 1
     
-  while j < n2:
-    arr[k] = R[j]
+  while j < sizeRight:
+    array[k] = RIGHT_ARRAY[j]
     j += 1
     k += 1
     
-def sort(arr, l, r):
-  if l < r:
-    m = l+(r-l)//2;
-    sort(arr, l, m)
-    sort(arr, m+1, r)
-    merge(arr, l, m, r)
+def sort(array, left, right):
+  if left < right:
+    middle = left + (right - left) // 2
+    sort(array, left, middle)
+    sort(array, middle + 1, right)
+    merge(array, left, middle, right)
 
 def mergeSort(array: list[int]) -> list[int]:
   sort(array, 0, len(array)-1)
   
-  return array;
+  return array
   
