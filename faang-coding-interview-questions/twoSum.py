@@ -34,47 +34,49 @@ import time
 
 
 def twoSum(nums: list, target: int) -> str:
-  num_dict: dict = dict();
+  num_dict: dict = dict()
   
   for i, num in enumerate(nums):
-    complement = target - num
-    if complement in num_dict:
-      return f"[{num_dict[complement]}, {i}]"
-      
-      
     num_dict[num] = i
+    complement = target - num
+    
+    if complement in num_dict:
+      return f"[{num_dict[complement]}, {i}] | value[{num_dict[complement]}] -> {nums[num_dict[complement]]} | value[{i}] -> {nums[i]} | target -> {target}"
+      
       
   return 'No corresponding values in the given array'
 
+
+nums: list[int] = [2,7,11,15]
+target: int = 9
+
+print(twoSum(nums, target))
+
+nums: list[int] = [3,2,4]
+target: int = 6
+
+print(twoSum(nums, target))
+
+nums: list[int] = [3,3]
+target: int = 6
+
+print(twoSum(nums, target))
+
   
 if __name__ == '__main__':
-  runs = 5
-  
+  runs = 3
+
   if sys.argv[1:]:
     try:
       runs = int(sys.argv[1])
-    except ValueError as ve:
-      print(f'Error: {ve}')
+    except ValueError as e:
+      print(f'Error: {e}')
 
   print(f"Run for {runs} times...")
   time.sleep(0.5)
-
-# nums: list[int] = [2,7,11,15]
-# target: int = 9
-
-# twoSum(nums=nums, target=target)
-
-# nums: list[int] = [3,2,4]
-# target: int = 6
-
-# twoSum(nums=nums, target=target)
-
-# nums: list[int] = [3,3]
-# target: int = 6
-
-# twoSum(nums=nums, target=target)
-
-for i in range(runs):
-  nums: list[int] = [random.randint(-10**9, 10**9) for _ in range(2, 10**4+1, 1)]
-  target: int = random.randint(-10**9, 10**9)
-  print(f"Run No. {i}: {twoSum(nums=nums, target=target)}")
+  
+  for i in range(1, runs + 1):
+    nums: list[int] = [random.randint(-10**9, 10**9) for _ in range(2, 10**4+1, 1)]
+    target: int = random.randint(-10**9, 10**9)
+    result = twoSum(nums=nums, target=target)
+    print(f"Run No. {i}: {result}")
