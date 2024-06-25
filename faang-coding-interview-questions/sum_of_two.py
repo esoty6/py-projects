@@ -33,7 +33,7 @@ import sys
 import time
 
 
-def twoSum(nums: list, target: int) -> str:
+def sum_of_two(nums: list, target: int) -> str:
   num_dict: dict = dict()
   
   for i, num in enumerate(nums):
@@ -50,17 +50,17 @@ def twoSum(nums: list, target: int) -> str:
 nums: list[int] = [2,7,11,15]
 target: int = 9
 
-print(twoSum(nums, target))
+print(sum_of_two(nums, target))
 
 nums: list[int] = [3,2,4]
 target: int = 6
 
-print(twoSum(nums, target))
+print(sum_of_two(nums, target))
 
 nums: list[int] = [3,3]
 target: int = 6
 
-print(twoSum(nums, target))
+print(sum_of_two(nums, target))
 
   
 if __name__ == '__main__':
@@ -78,5 +78,5 @@ if __name__ == '__main__':
   for i in range(1, runs + 1):
     nums: list[int] = [random.randint(-10**9, 10**9) for _ in range(2, 10**4+1, 1)]
     target: int = random.randint(-10**9, 10**9)
-    result = twoSum(nums=nums, target=target)
+    result = sum_of_two(nums, target)
     print(f"Run No. {i}: {result}")

@@ -1,4 +1,4 @@
-def hasSumOfTwoElements(nums):
+def has_sum_two_elements(nums):
     num_set = set()
     
     for num in nums:
@@ -13,12 +13,12 @@ def hasSumOfTwoElements(nums):
 
 nums: list[int] = [1,7,17,15]
 
-print(hasSumOfTwoElements(nums))
+print(has_sum_two_elements(nums))
 
 nums: list[int] = [3,2,4,8,6]
 
-print(hasSumOfTwoElements(nums))
+print(has_sum_two_elements(nums))
 
 nums: list[int] = [3,2,1]
 
-print(hasSumOfTwoElements(nums))
+print(has_sum_two_elements(nums))
