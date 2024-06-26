@@ -9,14 +9,14 @@ def check_length(func):
 
 # O(nlogn)
 @check_length
-def check_if_permutation_1(first: str, second: str) -> bool:
+def check_permutation_1(first: str, second: str) -> bool:
   # sorting two lists is O(2(nlogn)) -> O(nlogn)
   return sorted(first) == sorted(second)
 
 
 # O(n)
 @check_length
-def check_if_permutation_2(first: str, second: str) -> bool:
+def check_permutation_2(first: str, second: str) -> bool:
 
   # Space complexity O(2n) -> O(n)
   frequency_first = [0] * 26
@@ -33,9 +33,7 @@ def check_if_permutation_2(first: str, second: str) -> bool:
 
 
 for i in range(1, 3):
-  eval(f"check_if_permutation_{i}('abc', 'cab')")
-  eval(f"check_if_permutation_{i}('abcfe', 'cabef')")
-  eval(f"check_if_permutation_{i}('abc', 'cad')")
-  eval(f"check_if_permutation_{i}('adc', 'zad')")
-  eval(f"check_if_permutation_{i}('cabz', 'cabz')")
+  print(f"check_permutation_{i}('abc', 'cab'): ", eval(f"check_permutation_{i}('abc', 'cab')"))
+  print(f"check_permutation_{i}('abcfe', 'cabef'): ", eval(f"check_permutation_{i}('abcfe', 'cabef')"))
+  print(f"check_permutation_{i}('adc', 'zad'): ", eval(f"check_permutation_{i}('adc', 'zad')"))
   
