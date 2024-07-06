@@ -1,3 +1,4 @@
+from helpers import get_length
 from linked_list import LinkedList, ListNode
 
 
@@ -30,15 +31,6 @@ def sum_lists_backward(x: ListNode, y: ListNode) -> LinkedList:
 
 def sum_lists_forward(x: ListNode, y: ListNode) -> LinkedList:
   result_list = LinkedList()
-  
-  def get_length(head: ListNode) -> int:
-    length = 0
-    
-    while head:
-      length += 1
-      head = head.next
-      
-    return length
   
   
   def pad_list(head: ListNode, pad: int) -> ListNode:
