@@ -25,9 +25,9 @@ def check_permutation_2(first: str, second: str) -> bool:
   # Time complexity O(n)
   # iterates over two different sources but with the same length O(n + m) -> m == n -> O(2n) -> O(n)
   for c in first:
-    frequency_first[ord(c)-ord('a')] += 1
+    frequency_first[ord(c) - ord('a')] += 1
   for c in second:
-    frequency_second[ord(c)-ord('a')] += 1
+    frequency_second[ord(c) - ord('a')] += 1
     
   return frequency_first == frequency_second
 
